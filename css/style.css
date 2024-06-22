@@ -150,7 +150,6 @@
 
 
 /*ESTILOS LISTA MENU*/
-
 ul.menu, ul.submenu, ul.sub-submenu {
     list-style-type: none;
     padding: 0;
@@ -158,11 +157,12 @@ ul.menu, ul.submenu, ul.sub-submenu {
 }
 
 ul.menu > li {
-    margin-bottom: 1px; /* Add a small margin to separate menu items */
+    margin-bottom: 1px;
 }
 
 ul.menu > li > a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 10px;
     background-color: #ccc;
     text-decoration: none;
@@ -182,12 +182,77 @@ ul.submenu > li > a, ul.sub-submenu > li > a {
 }
 
 ul.submenu > li > ul.sub-submenu {
-    margin-left: 20px; /* Indent sub-submenus */
+    margin-left: 20px;
 }
 
 li.open > ul.submenu,
 li.open > ul.sub-submenu {
     display: block;
-    position: relative; /* Remove absolute positioning */
+    position: relative;
     margin-top: 1px;
+}
+
+.cuerpo-content__menulateral {
+    position: relative;
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden {
+    width: 50px; /* Reduce la anchura cuando está oculta */
+}
+
+.menu-items {
+    background-color: #f9f9f9;
+    padding: 10px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cuerpo-content__menulateral.hidden .menu-items span {
+    display: none;
+}
+
+.cuerpo-content__menulateral.hidden .menu-items a {
+    justify-content: center;
+}
+
+.menulateral-buscar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.menulateral-buscar form {
+    display: flex;
+    align-items: center;
+}
+
+.menulateral-buscar button {
+    margin-left: 5px;
+}
+
+.cuerpo-content__menulateral.hidden .menulateral-buscar form input {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden .menulateral-buscar form button {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden .caja-toggle {
+    left: 10px;
+}
+
+.menu-items .menu {
+    width: 100%;
 }
