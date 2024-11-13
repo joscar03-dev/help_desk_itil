@@ -1,0 +1,258 @@
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilo general de la cabecera */
+.cabecera {
+    background-color: white; /* Color de fondo */
+    color: black; /* Color del texto */
+    padding: 7px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Estilo del logo y área de la cabecera */
+.cabecera-date__logo img {
+    height: 80px; /* Altura del logo */
+    width: 250px; /* Ancho automático para mantener la proporción */
+}
+.cabecera-date__logo {
+    display: flex; /* Activa Flexbox */
+    align-items: left; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+.cabecera-date__area{
+    margin-left: 50px;
+}
+.cabecera-date__area h3 {
+    margin: 0; /* Eliminar margen por defecto */
+    padding: 5px 0; /* Espaciado interno */
+    font-size: 1.5em; /* Tamaño del texto */
+}
+
+/* Estilo de los íconos de usuario y alerta */
+.cabecera-date__user a{
+    color: black; /* Color del texto (iconos) */
+    padding: 0 10px; /* Espaciado alrededor de los iconos */
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+}
+
+.cabecera-date__user a:hover {
+    color: #636260; /* Cambia el color de los íconos al pasar el cursor */
+}
+.cabecera-date__user{
+    margin-left: auto;
+
+}
+.cabecera-date__user i{
+    margin-right: 10px;
+
+}
+.cabecera-date__user i {
+    font-size: 1.2em; /* Tamaño de los iconos */
+}
+
+.cabecera-date {
+    display: flex; /* Activa Flexbox */
+    align-items: left; /* Centra los elementos verticalmente */
+    justify-content: left; /* Distribuye el espacio entre los elementos */
+}
+
+.cabecera-date__logo, .cabecera-date__area, .cabecera-date__user {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .cabecera-date {
+        flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+        text-align: center; /* Alinea el texto al centro */
+    }
+
+    .cabecera-date__logo, .cabecera-date__area, .cabecera-date__user {
+        width: 100%; /* Hace que cada elemento ocupe el ancho completo */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        margin: 5px 0; /* Añade un margen para separar los elementos */
+    }
+
+    .cabecera-date__area h3 {
+        font-size: 1.2em; /* Reduce el tamaño del texto para dispositivos más pequeños */
+    }
+}
+.cuerpo {
+    padding: 7px;
+}
+.cuerpo-content__menulateral {
+    width: 250px;
+}
+
+.menulateral-buscar {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el formulario y el ícono de la flecha */
+    justify-content: space-between; /* Espacia los elementos dentro del contenedor */
+    width: 250px; /* Asegura que el contenedor tenga el ancho deseado */
+}
+
+/* Estilo del formulario de búsqueda */
+.menulateral-buscar form {
+    display: flex; /* Alinea el input y el botón de búsqueda */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno */
+    margin: 7px;
+}
+
+/* Estilo de la barra de búsqueda */
+.menulateral-buscar input[type="search"] {
+    border: none; /* Elimina el borde */
+    padding: 5px 10px; /* Espaciado interno */
+    margin-right: 5px; /* Espacio entre el input y el botón */
+    flex-grow: 1; /* Permite que el input ocupe el espacio disponible */
+}
+
+/* Estilo del botón de búsqueda */
+.menulateral-buscar button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Elimina el borde */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    padding: 5px; /* Espaciado interno */
+    color: inherit; /* Hereda el color del padre */
+}
+
+/* Cambia el estilo del botón de búsqueda al pasar el cursor */
+.menulateral-buscar button:hover {
+    background-color: #e79a9a; /* Fondo rojo claro al pasar el cursor */
+}
+
+.toggle-sidebar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px; /* Tamaño del círculo */
+    height: 25px; /* Tamaño del círculo */
+    background-color: red; /* Color de fondo del círculo */
+    border-radius: 50%; /* Hace el círculo perfecto */
+    color: white; /* Color del ícono */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    
+}
+
+
+.menulateral-buscar a:hover{
+    background-color: #e79a9a; /* Fondo rojo claro al pasar el*/
+}
+
+
+/*ESTILOS LISTA MENU*/
+ul.menu, ul.submenu, ul.sub-submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.menu > li {
+    margin-bottom: 1px;
+}
+
+ul.menu > li > a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ccc;
+    text-decoration: none;
+    border: 1px solid #999;
+}
+
+ul.submenu, ul.sub-submenu {
+    display: none;
+}
+
+ul.submenu > li > a, ul.sub-submenu > li > a {
+    display: block;
+    padding: 10px;
+    background-color: #eee;
+    text-decoration: none;
+    border: 1px solid #999;
+}
+
+ul.submenu > li > ul.sub-submenu {
+    margin-left: 20px;
+}
+
+li.open > ul.submenu,
+li.open > ul.sub-submenu {
+    display: block;
+    position: relative;
+    margin-top: 1px;
+}
+
+.cuerpo-content__menulateral {
+    position: relative;
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden {
+    width: 50px; /* Reduce la anchura cuando está oculta */
+}
+
+.menu-items {
+    background-color: #f9f9f9;
+    padding: 10px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cuerpo-content__menulateral.hidden .menu-items span {
+    display: none;
+}
+
+.cuerpo-content__menulateral.hidden .menu-items a {
+    justify-content: center;
+}
+
+.menulateral-buscar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.menulateral-buscar form {
+    display: flex;
+    align-items: center;
+}
+
+.menulateral-buscar button {
+    margin-left: 5px;
+}
+
+.cuerpo-content__menulateral.hidden .menulateral-buscar form input {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden .menulateral-buscar form button {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.cuerpo-content__menulateral.hidden .caja-toggle {
+    left: 10px;
+}
+
+.menu-items .menu {
+    width: 100%;
+}
